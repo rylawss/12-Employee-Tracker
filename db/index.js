@@ -31,11 +31,10 @@ class SqlQueries {
       );
   }
   employees() {
-    return this.connection
-      .promise()
-      .query(
-        "SELECT employee.id, employee.first_name, employee.last_name, department.name AS department, role.salary, employee.manager_id, employee.role_id FROM employee LEFT JOIN role on employee.role_id = role.id LEFT JOIN department on department_id = department.id"
-      );
+    return this.connection.promise().query(
+      // "SELECT employee.id, employee.first_name, employee.last_name, department.name AS department, role.salary, employee.manager_id, employee.role_id FROM employee LEFT JOIN role on employee.role_id = role.id LEFT JOIN department on department_id = department.id"
+      "SELECT employee.id, employee.first_name, employee.last_name FROM employee"
+    );
   }
 
   addDept(dept) {

@@ -73,18 +73,14 @@ function viewDepartments() {
 }
 
 async function viewRoles() {
-  try {
-    const data = await db.roles();
-    console.table(data);
-    startPrompts();
-  } catch (error) {
-    console.error(error);
-  }
+  db.roles()
+    .then(([data]) => console.table(data))
+    .then(() => startPrompts());
 }
 
 function viewEmployees() {
-  db.getEmployees()
-    .then((employees) => {
+  db.employees()
+    .then(([employees]) => {
       console.table(employees);
     })
     .then(startPrompts);

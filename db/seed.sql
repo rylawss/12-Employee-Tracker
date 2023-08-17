@@ -14,7 +14,7 @@ INSERT INTO role
 VALUES
     ('IT Manager', 100000, 1),
     ('Marketing lead', 80000, 1),
-    ('Haed Engineer', 150000, 2),
+    ('Head Engineer', 150000, 2),
     ('Software Engineer', 120000, 2),
     ('Account Manager', 160000, 3),
     ('Social Media Manager', 90000, 3),
@@ -25,9 +25,9 @@ INSERT INTO employee
 VALUES
     ('John', 'Doe', 1, NULL),
     ('Mike', 'Ross', 2, 1),
-    ('Ashley', 'Kruger', 3, NULL),
-    ('Todd', 'Tupik', 4, 3),
+    ('Ashley', 'Kruger', 3, 1),
+    ('Todd', 'Tupik', 4, 1),
     ('Devin', 'Singh', 5, NULL),
-    ('Kent', 'Brown', 6, 5),
+    ('Kent', 'Brown', 6, 1),
     ('Sarah', 'Todd', 7, NULL),
-    ('Tom', 'Smith', 8, 7);
+    ('Tom', 'Smith', 7, NULL);
