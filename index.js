@@ -66,18 +66,19 @@ function startPrompts() {
   });
 }
 
+//  Retrieves and displays the list of departments from the database
 function viewDepartments() {
   db.departments()
     .then(([data]) => console.table(data))
     .then(() => startPrompts());
 }
-
+//  Retrieves and displays the list of roles from the database
 async function viewRoles() {
   db.roles()
     .then(([data]) => console.table(data))
     .then(() => startPrompts());
 }
-
+//  Retrieves and displays the list of employees from the database
 function viewEmployees() {
   db.employees()
     .then(([employees]) => {
@@ -85,7 +86,7 @@ function viewEmployees() {
     })
     .then(startPrompts);
 }
-
+//  Adds a new department to the database
 function newDepartment() {
   inquirer
     .prompt([
@@ -98,7 +99,7 @@ function newDepartment() {
     .then(handleNewDepartment)
     .catch(handleError);
 }
-
+//  Adds a new role to the database
 function handleNewDepartment(res) {
   db.addDept(res);
   console.table(res);
@@ -109,7 +110,7 @@ function handleError(error) {
   console.error(error);
   startPrompts();
 }
-
+//  Creates a new employee by prompting the user for their first name, last name, and role
 function newEmployee() {
   inquirer
     .prompt([
@@ -149,7 +150,7 @@ function newEmployee() {
       });
     });
 }
-
+//
 function newRole() {
   db.departments().then(([data]) => {
     const departments = data.map(({ id, name }) => ({
